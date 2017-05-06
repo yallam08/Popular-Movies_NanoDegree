@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yallam.nanodegree.popularmovies2017.DetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_movie_title_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:padding="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            tools:text="The Dark Knight" />
+
+        <ImageView
+            android:id="@+id/img_movie_poster_details"
+            android:layout_width="130dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/tv_movie_title_details"
+            android:layout_margin="20dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/movie_poster_placeholder" />
+
+        <TextView
+            android:id="@+id/tv_movie_release_date_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/img_movie_poster_details"
+            android:layout_below="@id/tv_movie_title_details"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_movie_poster_details"
+            android:layout_toRightOf="@id/img_movie_poster_details"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="01-01-2013" />
+
+        <TextView
+            android:id="@+id/tv_movie_vote_average_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_movie_release_date_details"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_movie_poster_details"
+            android:layout_toRightOf="@id/img_movie_poster_details"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            tools:text="9.2/10" />
+
+        <Button
+            android:id="@+id/btn_fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_movie_vote_average_details"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/img_movie_poster_details"
+            android:layout_toRightOf="@id/img_movie_poster_details"
+            android:drawableLeft="@android:drawable/btn_star_big_off"
+            android:drawableStart="@android:drawable/btn_star_big_off"
+            android:onClick="favBtnClick"
+            android:text="@string/fav" />
+
+        <TextView
+            android:id="@+id/tv_movie_overview_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_movie_poster_details"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            tools:text="The best Batman movie ever. And one of the greatest movies of all time." />
+
+
+        <LinearLayout
+            android:id="@+id/videos_container_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_below="@id/tv_movie_overview_details">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/videos"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_movie_videos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:id="@+id/pb_loading_movie_videos_list"
+                android:visibility="visible"
+                android:layout_margin="5dp"
+                style="@style/Animation.AppCompat.Dialog"/>
+
+            <TextView
+                android:id="@+id/tv_no_videos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_videos"
+                android:padding="10dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_below="@id/videos_container_layout">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reviews"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_movie_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:id="@+id/pb_loading_movie_reviews_list"
+                android:visibility="visible"
+                android:layout_margin="5dp"
+                style="@style/Animation.AppCompat.Dialog"/>
+
+            <TextView
+                android:id="@+id/tv_no_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_reviews"
+                android:padding="10dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</android.support.v4.widget.NestedScrollView>

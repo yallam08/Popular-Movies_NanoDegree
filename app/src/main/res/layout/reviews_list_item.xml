@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@drawable/rect_with_bottom_stroke">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:text="@string/author"/>
+
+        <TextView
+            android:id="@+id/tv_author_value"
+            android:layout_width="0dp"
+            android:textSize="15sp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            tools:text="Yahia Allam"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_review_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="14sp"
+        tools:text="The review content."/>
+
+
+</LinearLayout>
